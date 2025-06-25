@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const navItems = ['Platform', 'Solutions', 'Pricing', 'Customers', 'Events'];
 
@@ -10,7 +11,12 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="w-full bg-black text-white">
+    <motion.header
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className="w-full bg-black text-white fixed top-0 left-0 z-50 shadow-lg backdrop-blur-md"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-orange-500 text-3xl font-bold">)))</span>
@@ -79,6 +85,6 @@ export default function Header() {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 }

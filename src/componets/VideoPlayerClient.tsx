@@ -1,41 +1,17 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
-import { getBlockCards } from "@/utils/api/getFaq";
 import { BlockCardItem } from "@/utils/types/types";
 
-const items = [
-  {
-    icon: "/icons/discovery.png",
-    title: "Learning and Discovery",
-    description: `Offers unparalleled access to the latest advancements in AI for B2B marketing, presented by forward-thinking, innovative brands.`,
-  },
-  {
-    icon: "/icons/networking.png",
-    title: "Networking",
-    description: `Quarterly events for participants to connect, share insights, and foster professional relationships.`,
-  },
-  {
-    icon: "/icons/multiformat.png",
-    title: "Multi-Format Educational Content every month",
-    description: `Available on demand, including webinars, articles, and more, catering to diverse learning preferences.`,
-  },
-];
+interface VideoPlayerClientProps {
+  items: BlockCardItem[];
+}
 
-export default function VideoPlayer() {
+export default function VideoPlayerClient({ items }: VideoPlayerClientProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [items, setItems] = useState<BlockCardItem[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getBlockCards();
-      setItems(data);
-    };
-
-    fetchData();
-  }, []);
   const handlePlay = () => {
     if (videoRef.current) {
       videoRef.current.play();
@@ -106,8 +82,6 @@ export default function VideoPlayer() {
                 key={idx}
                 className="relative rounded-2xl [background-image:linear-gradient(180deg,#ffffff_0%,rgba(102,102,102,0)_30.88%)] bg-clip-padding "
               >
-                {/* <div className="absolute top-0 left-0 size-full z-10 [border-width:0.71px] [border-style:solid] [border-image:linear-gradient(180deg,#ffffff8f_0%,rgba(102,102,102,0)_30.88%)] ![border-image-slice:1]" /> */}
-
                 <div className=" flex items-center justify-center bg-[linear-gradient(180deg,#0B0A2C_25%,#0ADC7D_122.78%)] rounded-2xl m-[1px] p-6 h-full">
                   <div className="absolute w-60 h-80 bg-black rounded-full blur-2xl opacity-90" />
 
@@ -136,4 +110,4 @@ export default function VideoPlayer() {
       </div>
     </section>
   );
-}
+} 
