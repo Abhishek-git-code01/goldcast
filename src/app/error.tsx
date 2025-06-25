@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link'; // Add this import
 
 export default function Error({ error, reset }: { error: Error; reset: () => void }) {
   return (
@@ -21,10 +22,10 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
         >
           Try Again
         </button>
-        <a href="/" className="px-6 py-3 bg-gradient-to-r from-[#0ADC7D] to-[#D01EDA] rounded-xl text-white font-semibold shadow-lg hover:scale-105 transition">
+        <Link href="/" className="px-6 py-3 bg-gradient-to-r from-[#0ADC7D] to-[#D01EDA] rounded-xl text-white font-semibold shadow-lg hover:scale-105 transition">
           Go Home
-        </a>
+        </Link>
       </div>
     </div>
   );
-} 
+}

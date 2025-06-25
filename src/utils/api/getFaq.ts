@@ -1,6 +1,11 @@
 import { BlockCardItem, FaqEntry, TestimonialCardProps} from "../types/types";
 import { contentfulClient } from "./apiCedincial";
-
+export interface ContentfulFaqItem {
+  fields: {
+    question: string;
+    anshwer: string;
+  };
+}
 
 
 export const getFaqs = async (): Promise<FaqEntry[]> => {
@@ -8,12 +13,14 @@ export const getFaqs = async (): Promise<FaqEntry[]> => {
     content_type: 'faq', 
   });
 
-  return response.items.map((item: any) => ({
-    question: item.fields.question,
-    anshwer: item.fields.anshwer,
-  }));
+  return response.items.map((item) => {
+    const faqItem = item as unknown as ContentfulFaqItem;
+    return {
+      question: faqItem.fields.question,
+      anshwer: faqItem.fields.anshwer,
+    };
+  });
 };
-
 
 
 
@@ -22,17 +29,20 @@ export const getTestimonials = async (): Promise<TestimonialCardProps[]> => {
     content_type: 'clientReview', 
   });
 
-  return entries.items.map((item: any) => ({
-    name: item.fields.name,
-    title: item.fields.title,
-    company: item.fields.company,
-    testimonial: item.fields.description, 
-    avtar: item.fields.avtar?.fields?.file?.url
-      ? `https:${item.fields.avtar.fields.file.url}`
-      : '/default-avatar.png',
-  }));
+  return entries.items.map((item) => {
+    const avatar = item.fields.avtar as { fields?: { file?: { url?: string } } } | undefined;
+    
+    return {
+      name: item.fields.name as string,
+      title: item.fields.title as string,
+      company: item.fields.company as string,
+      testimonial: item.fields.description as string, 
+      avtar: avatar?.fields?.file?.url
+        ? `https:${avatar.fields.file.url}`
+        : '/default-avatar.png',
+    };
+  });
 };
-
 
 
 
@@ -42,12 +52,15 @@ export const getBlockCards = async (): Promise<BlockCardItem[]> => {
     content_type: 'service',
   });
 
-  return res.items.map((item: any) => ({
-    icon: item.fields.icon?.fields?.file?.url
-      ? `https:${item.fields.icon.fields.file.url}`
-      : '/icons/default.png',
-    title: item.fields.title,
-    descripton: item.fields.descripton,
-  }));
+  return res.items.map((item) => {
+    const icon = item.fields.icon as { fields?: { file?: { url?: string } } } | undefined;
+    
+    return {
+      icon: icon?.fields?.file?.url
+        ? `https:${icon.fields.file.url}`
+        : '/icons/default.png',
+      title: item.fields.title as string,
+      descripton: item.fields.descripton as string,
+    };
+  });
 };
-

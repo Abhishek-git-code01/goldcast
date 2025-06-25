@@ -1,3 +1,5 @@
+import Link from 'next/link'; // Add this import
+
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center text-white px-4">
@@ -6,9 +8,9 @@ export default function NotFound() {
       <p className="text-gray-400 mb-8 text-center max-w-md">
         Sorry, the page you are looking for does not exist or has been moved.
       </p>
-      <a href="/" className="px-6 py-3 bg-gradient-to-r from-[#D01EDA] to-[#0ADC7D] rounded-xl text-white font-semibold shadow-lg hover:scale-105 transition">
+      <Link href="/" className="px-6 py-3 bg-gradient-to-r from-[#D01EDA] to-[#0ADC7D] rounded-xl text-white font-semibold shadow-lg hover:scale-105 transition">
         Go Home
-      </a>
+      </Link>
     </div>
   );
-} 
+}

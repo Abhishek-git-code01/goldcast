@@ -9,7 +9,8 @@ export default async function FAQ() {
   let error: string | null = null;
   try {
     faqs = await getFaqs();
-  } catch (e: any) {
+  } catch (e: unknown) {
+    if(e instanceof Error)
     error = e?.message || 'Failed to load FAQs.';
   }
 
