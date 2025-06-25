@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 export default function Footer() {
   return (
     <section
-      className="relative bg-black text-white overflow-hidden"
+      className="relative bg-[#121212] text-white overflow-hidden"
       style={{ minHeight: "400px" }}
     >
       <Image
@@ -15,7 +15,7 @@ export default function Footer() {
         alt="Background"
         fill
         priority
-        className="object-cover object-right opacity-80 pointer-events-none"
+        className="object-cover object-right opacity-100 pointer-events-none"
       />
 
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent" />
@@ -25,7 +25,7 @@ export default function Footer() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Be Part of the Future
           </h2>
-          <p className="text-lg text-white/90 mb-8 leading-relaxed">
+          <p className="text-lg text-white mb-8 leading-relaxed">
             Ready to transform your marketing with AI? Join as a member for
             exclusive access to our content and community, or partner with us to
             shape the future of B2B marketing.
@@ -33,7 +33,7 @@ export default function Footer() {
 
           <Link
             href="#"
-            className="inline-flex items-center gap-1 bg-gradient-to-b from-[#F65BFF] to-[#D01EDA] text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition hover:scale-105"
+            className="inline-flex items-center gap-1 bg-gradient-to-b from-[#F65BFF] to-[#D01EDA] text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition hover:scale-105"
           >
             Apply for Invite <ChevronRight size={20} />
           </Link>

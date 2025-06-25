@@ -42,20 +42,19 @@ export const HeroSection: React.FC = () => {
         }}
       />
 
-      <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-20 text-center px-6 py-40 max-w-4xl mx-auto">
         <motion.div
-          className="mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4">
-            the future is AI.
+          <h1 className="text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl text-[#FFFFFF]">
+            the <span className="font-bold italic">future</span>  is AI.
           </h1>
         </motion.div>
 
         <motion.p
-          className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed"
+          className="text-[#FFFFFF] text-lg md:text-xl max-w-2xl mx-auto mb-6 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -105,7 +104,7 @@ export const HeroSection: React.FC = () => {
         ))}
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-10" />
+      {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-10" /> */}
     </div>
   );
 };

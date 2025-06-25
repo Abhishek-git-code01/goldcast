@@ -13,3 +13,8 @@
 .animate-slide {
   animation: slide 20s linear infinite;
 }
+
+body {
+  background: #000;
+  font-family: var(--font-inter), sans-serif;
+}

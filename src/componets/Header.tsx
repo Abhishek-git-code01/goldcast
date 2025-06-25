@@ -17,35 +17,37 @@ export default function Header() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className="w-full bg-black text-white fixed top-0 left-0 z-50 shadow-lg backdrop-blur-md"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-14 py-5 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-orange-500 text-3xl font-bold">)))</span>
           <span className="text-2xl font-semibold">Goldcast</span>
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <Link key={item} href={`/${item.toLowerCase()}`} className="hover:text-orange-400">
-              {item}
+        <div className='flex items-center justify-end gap-20'>
+          <nav className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <Link key={item} href={`/${item.toLowerCase()}`} className="text-base text-white/70 hover:text-orange-400">
+                {item}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="hidden md:flex items-center space-x-4">
+            <Link
+              href="/login"
+              className="px-5 py-2 min-w-[120px] text-center border border-white rounded-full hover:bg-white hover:text-black transition"
+            >
+              Login
             </Link>
-          ))}
-        </nav>
-
-        <div className="hidden md:flex items-center space-x-4">
-          <Link
-            href="/login"
-            className="px-5 py-2 border border-white rounded-full hover:bg-white hover:text-black transition"
-          >
-            Login
-          </Link>
-          <Link
-            href="/demo"
-            className="px-5 py-2 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition"
-          >
-            Get a Demo
-          </Link>
+            <Link
+              href="/demo"
+              className="px-5 py-2 min-w-[120px] text-center bg-[#FF4200] text-white rounded-full hover:bg-orange-700 transition"
+            >
+              Get a Demo
+            </Link>
+          </div>
         </div>
-
+            
         <button
           className="md:hidden text-white"
           onClick={() => setMobileOpen((prev) => !prev)}

@@ -15,7 +15,7 @@ const TestimonialShowcaseClient: React.FC<TestimonialShowcaseClientProps> = ({ t
   return (
     <>
       {/* Title Section - No Background */}
-      <div className="bg-black py-16 px-4 ">
+      <div className="bg-black pt-24 px-4 ">
         <div className="max-w-7xl mx-auto px-4">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-white text-center mb-6"
@@ -30,7 +30,7 @@ const TestimonialShowcaseClient: React.FC<TestimonialShowcaseClientProps> = ({ t
 
       {/* Description + Testimonials Section - With Background */}
       <div
-        className="py-16 px-4 bg-no-repeat bg-center bg-black 2xl:w-screen"
+        className="mb-10 px-4 bg-no-repeat bg-center bg-black 2xl:w-full"
         style={{
           backgroundImage: "url('/assets/testimonilbg.png')",
           backgroundSize: '100%',
@@ -51,14 +51,12 @@ const TestimonialShowcaseClient: React.FC<TestimonialShowcaseClientProps> = ({ t
 
         <div className="max-w-7xl mx-auto px-4">
           <motion.p
-            className="text-sm md:text-xl text-gray-300 text-center max-w-3xl mx-auto mb-12 mt-10"
+            className="text-sm md:text-base text-white font-normal text-center max-w-3xl mx-auto mb-12 mt-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            The AI Marketing Alliance is the essential resource and network
-            for enterprise marketing leaders driven to integrate artificial
-            intelligence into their strategies and operations...
+            The AI Marketing Alliance is the essential resource and network for enterprise marketing leaders driven to integrate artificial intelligence into their strategies and operations. Our mission is clear: to educate every marketing leader on the practical applications of AI, helping them not only keep pace but also excel in a rapidly evolving space. 
           </motion.p>
 
           <div className="overflow-hidden relative">
