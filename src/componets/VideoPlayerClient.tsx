@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { BlockCardItem } from "@/utils/types/types";
-import { div } from "framer-motion/client";
+import {motion} from 'framer-motion'
 
 interface VideoPlayerClientProps {
   items: BlockCardItem[];
@@ -92,9 +92,13 @@ export default function VideoPlayerClient({ items }: VideoPlayerClientProps) {
             What do alliance members get?
           </h2>
 
-          <div className="max-w-4xl  mx-auto grid gap-7 md:grid-cols-3">
+          <motion.div 
+               
+
+          className="max-w-4xl  mx-auto grid gap-7 md:grid-cols-3">
             {items.map((item, idx) => (
-              <div
+               <motion.div
+                whileHover={{ scale: 1.1, textShadow: '0px 0px 8px rgba(255, 165, 0, 0.8)' }}
                 key={idx}
                 className="relative rounded-2xl [background-image:linear-gradient(180deg,#ffffff_0%,rgba(102,102,102,0)_30.88%)] bg-clip-padding "
               >
@@ -102,7 +106,10 @@ export default function VideoPlayerClient({ items }: VideoPlayerClientProps) {
                   <div className="absolute w-60 h-80 bg-black rounded-full blur-2xl opacity-90" />
 
                   <div className="relative z-10 flex flex-col space-y-4">
-                    <div className="w-12 h-12 ">
+                    <motion.div className="w-12 h-12 "
+                     whileHover={{ scale: 1.1, textShadow: '0px 0px 8px rgba(255, 165, 0, 0.8)' }}
+                    >
+                      
                       <Image
                         src={item.icon}
                         alt={item.title}
@@ -110,7 +117,7 @@ export default function VideoPlayerClient({ items }: VideoPlayerClientProps) {
                         height={48}
                         className="object-contain"
                       />
-                    </div>
+                    </motion.div>
                     <h3 className="text-xl font-bold leading-snug md:text-xs">
                       {item.title}
                     </h3>
@@ -119,9 +126,9 @@ export default function VideoPlayerClient({ items }: VideoPlayerClientProps) {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
