@@ -102,6 +102,6 @@ MIT
 ## 📄 Performace
 ![Screenshot from 2025-06-25 13-17-17](https://github.com/user-attachments/assets/8d36bc11-179e-489c-815e-f49276a10512)
 
-## 📄 Deployed Project
-link:https://goldcast-sooty.vercel.app/
+## 📄 Deployed Project Over Vercel
+link: https://goldcast-sooty.vercel.app/
 
