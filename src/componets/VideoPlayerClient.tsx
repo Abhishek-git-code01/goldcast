@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { BlockCardItem } from "@/utils/types/types";
+import { div } from "framer-motion/client";
 
 interface VideoPlayerClientProps {
   items: BlockCardItem[];
@@ -91,7 +92,7 @@ export default function VideoPlayerClient({ items }: VideoPlayerClientProps) {
             What do alliance members get?
           </h2>
 
-          <div className="max-w-4xl mx-auto grid gap-7 md:grid-cols-3">
+          <div className="max-w-4xl  mx-auto grid gap-7 md:grid-cols-3">
             {items.map((item, idx) => (
               <div
                 key={idx}
@@ -101,7 +102,7 @@ export default function VideoPlayerClient({ items }: VideoPlayerClientProps) {
                   <div className="absolute w-60 h-80 bg-black rounded-full blur-2xl opacity-90" />
 
                   <div className="relative z-10 flex flex-col space-y-4">
-                    <div className="w-12 h-12">
+                    <div className="w-12 h-12 ">
                       <Image
                         src={item.icon}
                         alt={item.title}
@@ -110,10 +111,10 @@ export default function VideoPlayerClient({ items }: VideoPlayerClientProps) {
                         className="object-contain"
                       />
                     </div>
-                    <h3 className="text-xl font-bold leading-snug">
+                    <h3 className="text-xl font-bold leading-snug md:text-xs">
                       {item.title}
                     </h3>
-                    <p className="leading-relaxed text-base">
+                    <p className="leading-relaxed text- md:text-xs sm:text-sm ">
                       {item.descripton}
                     </p>
                   </div>

@@ -20,28 +20,28 @@ export default function Header() {
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-14 py-5 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-orange-500 text-3xl font-bold">)))</span>
-          <span className="text-2xl font-semibold">Goldcast</span>
+          <span className="text-2xl md:text-xl font-semibold">Goldcast</span>
         </Link>
 
-        <div className='flex items-center justify-end gap-20'>
-          <nav className="hidden md:flex items-center space-x-8">
+        <div className="flex items-center justify-end  gap-10 sm:gap-2">
+          <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
-              <Link key={item} href={`/${item.toLowerCase()}`} className="text-base text-white/70 hover:text-orange-400">
+              <Link key={item} href={`/${item.toLowerCase()}`} className="md:text-xs lg:text-base text-white/70 hover:text-orange-400">
                 {item}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-2 md:space-x-3">
             <Link
               href="/login"
-              className="px-5 py-2 min-w-[120px] text-center border border-white rounded-full hover:bg-white hover:text-black transition"
+              className="px-5 py-2 md:text-xs md:px-4 md:py-1.5 min-w-[100px] text-center border border-white rounded-full hover:bg-white hover:text-black transition"
             >
               Login
             </Link>
             <Link
               href="/demo"
-              className="px-5 py-2 min-w-[120px] text-center bg-[#FF4200] text-white rounded-full hover:bg-orange-700 transition"
+              className="px-5 py-2 md:text-xs md:px-4.5 md:py-1.5 min-w-[100px] text-center bg-[#FF4200] text-white rounded-full hover:bg-orange-700 transition"
             >
               Get a Demo
             </Link>
